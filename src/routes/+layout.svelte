@@ -25,7 +25,7 @@
 		{@render link('/papers', 'papers')}
 
 		<a
-			href="https://github.com/cubedhuang/ilo-nasin-sin"
+			href="https://github.com/cubedhuang/nasin.nimi.li"
 			class="ml-auto font-medium underline decoration-transparent decoration-2 underline-offset-4 transition hover:text-black hover:decoration-current"
 			>GitHub</a
 		>
