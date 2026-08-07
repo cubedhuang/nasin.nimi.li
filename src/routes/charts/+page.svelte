@@ -63,3 +63,9 @@
 		<ScatterWords words={data2} {query} dataName={data2Name} />
 	</div>
 </div>
+
+<hr class="my-6" />
+
+<p>
+	View more data at <a class="text-blue-500" href="/visualize">/visualize</a>.
+</p>
