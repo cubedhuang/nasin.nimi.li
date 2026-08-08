@@ -58,15 +58,17 @@
 		if (!model) return [];
 		const q = query.trim().toLowerCase();
 		if (!q) return [];
+		const equals: string[] = [];
 		const starts: string[] = [];
 		const contains: string[] = [];
 		for (const w of model.words) {
 			const lw = w.toLowerCase();
-			if (lw.startsWith(q)) starts.push(w);
+			if (lw === q) equals.push(w);
+			else if (lw.startsWith(q)) starts.push(w);
 			else if (lw.includes(q)) contains.push(w);
 			if (starts.length >= MAX_SUGGESTIONS) break;
 		}
-		return [...starts, ...contains].slice(0, MAX_SUGGESTIONS);
+		return [...equals, ...starts, ...contains].slice(0, MAX_SUGGESTIONS);
 	});
 
 	const allowed = $derived.by(() => {
@@ -179,7 +181,7 @@
 
 		{#if open && suggestions.length > 0}
 			<ul
-				class="absolute z-10 mt-1 w-full overflow-hidden rounded-lg border-2 border-gray-400 bg-white shadow"
+				class="absolute z-10 mt-1 max-h-96 w-full overflow-auto rounded-lg border-2 border-gray-400 bg-white shadow"
 				role="listbox"
 			>
 				{#each suggestions as word, i}
