@@ -20,7 +20,7 @@
 	let selected = $state('pona');
 	let highlighted = $state(0);
 	let open = $state(false);
-	let topN = $state(50);
+	let topN = $state(200);
 	let filterId = $state('core');
 
 	async function load(name: CorpusType): Promise<Model> {
