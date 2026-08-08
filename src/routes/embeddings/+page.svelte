@@ -211,11 +211,11 @@
 		<h2 class="mt-6 text-xl font-semibold">
 			nimi seme li poka tawa nimi <span class="italic">{selected}</span>?
 		</h2>
-		<ol class="mt-2 max-w-sm">
+		<ol class="mt-2 max-w-sm border-t border-gray-200">
 			{#each neighbors as n}
-				<li class="relative border-b border-gray-200 py-1">
+				<li class="relative border-b border-gray-200 py-0.5">
 					<div
-						class="absolute inset-y-0 left-0 bg-gray-200"
+						class="absolute inset-y-0 left-0 bg-blue-50"
 						style="width: {Math.max(0, n.score) * 100}%"
 					></div>
 					<div
